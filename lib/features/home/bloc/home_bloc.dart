@@ -3,7 +3,7 @@ import 'dart:async';
 import 'package:bloc/bloc.dart';
 import 'package:meta/meta.dart';
 import 'package:simple_cart_bloc/data/cart_items.dart';
-import 'package:simple_cart_bloc/data/grocery_data.dart';
+import 'package:simple_cart_bloc/data/product_data.dart';
 import 'package:simple_cart_bloc/data/wishlist_items.dart';
 import 'package:simple_cart_bloc/features/home/models/product_data_model.dart';
 
@@ -61,9 +61,9 @@ class HomeBloc extends Bloc<HomeEvent, HomeState> {
   FutureOr<void> homeInitialEvent(
       HomeInitialEvent event, Emitter<HomeState> emit) async {
     emit(HomeLoadingState());
-    await Future.delayed(const Duration(seconds: 3));
+    await Future.delayed(const Duration(seconds: 1));
     emit(HomeLoadedSuccesState(
-        products: GroceryData.groceryProducts
+        products: ProductData.dataProducts
             .map((e) => ProductDataModel(
                 id: e['id'],
                 name: e['name'],

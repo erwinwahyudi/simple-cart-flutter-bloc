@@ -3,14 +3,14 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:simple_cart_bloc/features/cart/bloc/cart_bloc.dart';
 import 'package:simple_cart_bloc/features/cart/ui/cart_tile_widget.dart';
 
-class Cart extends StatefulWidget {
-  const Cart({super.key});
+class CartPage extends StatefulWidget {
+  const CartPage({super.key});
 
   @override
-  State<Cart> createState() => _CartState();
+  State<CartPage> createState() => _CartPageState();
 }
 
-class _CartState extends State<Cart> {
+class _CartPageState extends State<CartPage> {
   final CartBloc cartBloc = CartBloc();
 
   @override
